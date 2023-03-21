@@ -1,0 +1,9 @@
+<?php
+
+$server = "ix.cs.uoregon.edu";
+$dbname ="stores7";
+$user = "tchen3";
+$pass = "2964";
+$port="3727";
+
+?>
