@@ -1,0 +1,104 @@
+<html>
+<head>
+       <title>Online Delivery System</title>
+</head>
+
+<body bgcolor="white">
+
+<h3>Connecting using MySQL/PHP</h3>
+
+
+
+<hr>
+
+<p>
+Function 1: Find the customer with the highest number of purchases, enter the date if you wish to limit the query result after this certain date
+
+<p>
+
+<form action="customer.php" method="POST">
+
+<br>
+<input type="text" name="date">
+<input type="submit" value="submit">
+<input type="reset" value="erase">
+</form>
+
+
+
+<hr>
+
+<p>
+Function 2: Find the driver with the highest number of overtimes during a delivery, enter the date if you wish to limit the query result after this certain date
+
+<p>
+
+<form action="driver.php" method="POST">
+
+<br>
+<input type="text" name="date">
+<input type="submit" value="submit">
+<input type="reset" value="erase">
+</form>
+
+
+
+<hr>
+
+<p>
+Function 3: Find the stores with the highest amount of money spend by customers
+<p>
+
+<form action="delivery.php" method="POST">
+
+<br>
+<input type="submit" value="start">
+</form>
+
+
+
+<hr>
+
+<p>
+Function 4: Find the most ordered items from each store
+<p>
+
+<form action="item.php" method="POST">
+
+<br>
+<input type="submit" value="start">
+</form>
+
+
+
+<hr>
+
+<p>
+Function 5: Find the most ordered store
+<p>
+
+<form action="store.php" method="POST">
+
+<br>
+<input type="submit" value="start">
+</form>
+
+
+
+<hr>
+
+<p>
+
+       
+<a href="index.txt" >Contents</a>
+of this page.
+
+
+(And the <a href="connectionData.txt" >connection data</a>,
+kept separately for security reasons.)
+
+
+
+
+</body>
+</html>
