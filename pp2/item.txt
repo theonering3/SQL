@@ -26,11 +26,10 @@ $thedate = mysqli_real_escape_string($conn, $date);
 // this is a small attempt to avoid SQL injection
 // better to use prepared statements
 
-$query = "SELECT s.store_name AS sn,sum(di.quantity) AS quan
-FROM Delivery d JOIN Store s ON s.store_id=d.Store_store_id
-JOIN Delivery_has_Items di ON di.Delivery_instance_id=d.instance_id
+$query = "SELECT i.item_name as ina, sum(di.quantity) AS quan
+FROM Delivery d JOIN Delivery_has_Items di ON di.Delivery_instance_id=d.instance_id
 JOIN Items i ON i.item_id=di.Items_item_id
-GROUP BY s.store_id
+GROUP BY i.item_id
 ORDER BY 2 DESC";
 
 ?>
@@ -55,7 +54,7 @@ print "<pre>";
 while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
   {
     print "\n";
-    print "Storename: $row[sn] Quantity:$row[quan]";
+    print "Item name: $row[ina] Quantity:$row[quan]";
   }
 print "</pre>";
 

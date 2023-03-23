@@ -29,8 +29,8 @@ $thedate = mysqli_real_escape_string($conn, $date);
 $query1 = "SELECT fname,lname,People_ssn,number_of_purchase,join_date
 FROM Customer c JOIN People p on p.ssn=c.People_ssn
 WHERE CAST(";
-$query2 =" AS DATE)>c.join date
-ORDER BY number of purchase DESC";
+$query2 =" AS DATE)<c.join_date
+ORDER BY number_of_purchase DESC";
 $query = $query1."'".$thedate."'".$query2;
 
 ?>
