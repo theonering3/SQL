@@ -29,11 +29,11 @@ $thedate = mysqli_real_escape_string($conn, $date);
 $query1 = "SELECT fname,lname,d.People_ssn,SUM(dy.overtime)/COUNT(d.People_ssn) as number_of_overtime
 FROM Driver d JOIN People p ON p.ssn=d.People_ssn
 JOIN Delivery dy ON dy.Driver_People_ssn=d.People_ssn
-WHERE CAST(";
+WHERE d.join_date>CAST(";
 
-$query2 = " AS DATE)<d.join_date
+$query2 = " AS DATE)
 GROUP BY d.People_ssn
-ORDER BY 3 DESC";
+ORDER BY 4 DESC";
 $query = $query1."'".$thedate."'".$query2;
 
 ?>
@@ -58,7 +58,7 @@ print "<pre>";
 while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
   {
     print "\n";
-    print "Firstname: $row[fname]  Last name: $row[lname] SSN:$row[People_ssn]";
+    print "Firstname: $row[fname]  Last name: $row[lname] SSN:$row[People_ssn] Number of Overtime:$row[number_of_overtime]";
   }
 print "</pre>";
 
